@@ -1,7 +1,5 @@
 const  mongoose = require("../database/database")
 
-
-
 const bcrypt = require("bcryptjs")
 const { v4: uuid } = require('uuid');
 
