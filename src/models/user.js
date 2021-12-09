@@ -1,9 +1,11 @@
 const  mongoose = require("../database/database")
-// const mongoose = require("mongoose")
+
+
+
 const bcrypt = require("bcryptjs")
 const { v4: uuid } = require('uuid');
-// Schema é campos que tem na tabela de usuarios/ou qualquer outra coisa
 
+// Schema é campos que tem na tabela de usuarios/ou qualquer outra coisa
 const UserSchema = new mongoose.Schema({
 
     name:{
