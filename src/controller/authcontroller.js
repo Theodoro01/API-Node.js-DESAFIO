@@ -3,23 +3,23 @@ const express = require("express");
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const authConfig = require("../config/auth");
+const authConfig = require("../config/auth.json")
 const router = express.Router();
-const { v4: uuid } = require('uuid');
 
-function generateToken(params = {}){
-    return jwt.sign(params, authConfig.secret, {
+
+
+function generateToken( params = {} ) {
+    return jwt.sign( params, authConfig.secret, {
         expiresIn: 86400,
     });
-}
+}    
 
-router.post("/register", async (req, res) => {
+router.post( "/register" , async (req, res) => {
     const { email } = req.body;
    
     try {
-
-        if (await User.findOne({ email }))
-            return res.status(400).send({error: "User already exists"})
+        if ( await User.findOne({ email }))
+            return res.status(400).send({ error: "User already exists" })
         
         const user = await User.create( req.body );
         // Não exibir a senha ou hash quando o usuario for cadastrado
@@ -30,8 +30,8 @@ router.post("/register", async (req, res) => {
             token: generateToken({ id: user.id }),
         });
     }catch (err) {
-        console.log(err)
-        return res.status(400).send({error: 'Registration failed'})
+        return res.status(400).send({error: 'Registration failed'});
+
     }
 })
 
