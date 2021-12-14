@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+const dotenv = require("dotenv/config");
+
 const connection = require("./database/database");
 
 require("./controller/authcontroller.js")(app);
@@ -14,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen( process.env.PORT || 3000, () => {
+app.listen( 3000, () => {
     console.log("APP RODANDO!");
 });
 
