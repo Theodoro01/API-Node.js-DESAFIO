@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-const dotenv = require("dotenv/config");
+const dotenv = require("dotenv/config")
 
 const connection = require("./database/database");
 
@@ -15,8 +15,9 @@ app.get("/", (req, res) => {
     res.send({ ok: true })
 });
 
+const port =  process.env.PORT || 3000; 
 
-app.listen( 3000, () => {
+app.listen(port, () => {
     console.log("APP RODANDO!");
 });
 

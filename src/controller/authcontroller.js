@@ -6,11 +6,11 @@ const jwt = require("jsonwebtoken");
 const authConfig = require("../config/auth.json")
 const router = express.Router();
 
-const dotenv = require("dotenv/config");
+
 
 
 function generateToken( params = {} ) {
-    return jwt.sign( params, process.env.SECRET_TOKEN , {
+    return jwt.sign( params, authConfig.secret, {
         expiresIn: 86400,
     });
 }    
