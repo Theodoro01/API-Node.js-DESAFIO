@@ -41,7 +41,7 @@
    
   }
   
-  Será retornado os dados do usuário cadastro e o Token gerado com validade de 24 horas.
+  Serão retornado os dados do usuário cadastro e o Token gerado com validade de 24 horas.
           
           {
           
@@ -61,7 +61,7 @@
           
           
 Atráves da rota POST https://node-api-desafio-dado.herokuapp.com/auth/authenticate, <br>
-passamos como parâmetros o email e a senha outrorá cadastrados e teremos o seguinte retorno:
+passamos como parâmetros o email e a senha outrora cadastrados e teremos o seguinte retorno:
           
           
            {  
