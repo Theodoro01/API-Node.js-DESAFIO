@@ -41,7 +41,7 @@
    
   }
   
-  Serão retornado os dados do usuário cadastro e o Token gerado com validade de 24 horas.
+  Serão retornados os dados do usuário cadastro e o Token gerado com validade de 24 horas.
           
           {
           
